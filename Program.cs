@@ -1,16 +1,23 @@
-using PhotoSharingApplication.Data;
 using Microsoft.EntityFrameworkCore;
+using PhotoSharingApplication.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<PhotoSharingContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("PhotoSharingDB")));
+    options.UseSqlServer(builder.Configuration
+        .GetConnectionString("PhotoSharingDB")));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Q14 — Remplace Database.SetInitializer + Application_Start
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider
+        .GetRequiredService<PhotoSharingContext>();
+    PhotoSharingInitializer.Initialize(context);  // appel du Seed
+}
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

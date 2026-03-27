@@ -4717,11 +4717,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\OneDrive\\Documents\\PhotoSharingApplication\\PhotoSharingApplication\\PhotoSharingApplication.csproj",
+      "projectUniqueName": "C:\\Users\\User\\OneDrive\\Desktop\\PhotoSharingApplication\\PhotoSharingApplication\\PhotoSharingApplication.csproj",
       "projectName": "PhotoSharingApplication",
-      "projectPath": "C:\\Users\\User\\OneDrive\\Documents\\PhotoSharingApplication\\PhotoSharingApplication\\PhotoSharingApplication.csproj",
+      "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\PhotoSharingApplication\\PhotoSharingApplication\\PhotoSharingApplication.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\OneDrive\\Documents\\PhotoSharingApplication\\PhotoSharingApplication\\obj\\",
+      "outputPath": "C:\\Users\\User\\OneDrive\\Desktop\\PhotoSharingApplication\\PhotoSharingApplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

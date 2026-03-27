@@ -1,0 +1,126 @@
+@model PhotoSharingApplication.Models.Photo
+@{ ViewData["Title"] = "Nouvelle photo"; }
+
+<style>
+    .form-wrap {
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        padding: 2.5rem;
+        border-radius: 4px;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+    .form-wrap h2 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+    }
+    .form-wrap h2 span { color: #E8593C; }
+    .field { margin-bottom: 1.5rem; }
+    .field label {
+        display: block;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #888;
+        margin-bottom: 6px;
+    }
+    .field input,
+    .field textarea {
+        width: 100%;
+        border: 1px solid #e5e5e5;
+        border-radius: 3px;
+        padding: 10px 14px;
+        font-size: 0.95rem;
+        transition: border-color 0.2s;
+        background: #fafafa;
+    }
+    .field input:focus,
+    .field textarea:focus {
+        outline: none;
+        border-color: #E8593C;
+        background: white;
+    }
+    .field textarea { resize: vertical; min-height: 100px; }
+
+    .upload-zone {
+        border: 2px dashed #e0dbd6;
+        border-radius: 4px;
+        padding: 2rem;
+        text-align: center;
+        cursor: pointer;
+        transition: border-color 0.2s;
+        background: #fafafa;
+    }
+    .upload-zone:hover { border-color: #E8593C; }
+    .upload-zone input { display: none; }
+    .upload-zone label {
+        cursor: pointer;
+        color: #aaa;
+        font-size: 0.9rem;
+    }
+    .upload-zone .icon { font-size: 2rem; margin-bottom: 8px; }
+    #preview { max-width: 100%; border-radius: 3px; margin-top: 1rem; display:none; }
+
+    .text-danger { font-size: 0.8rem; color: #E8593C; }
+    .form-actions { display: flex; gap: 12px; margin-top: 2rem; }
+</style>
+
+<div class="form-wrap">
+    <h2>Nouvelle photo<span>.</span></h2>
+
+    <form asp-action="Creer" method="post" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+
+        <div class="field">
+            <label>Titre *</label>
+            <input asp-for="Titre" placeholder="Donnez un titre à votre photo" />
+            <span asp-validation-for="Titre" class="text-danger"></span>
+        </div>
+
+        <div class="field">
+            <label>Description</label>
+            <textarea asp-for="Description"
+                      placeholder="Décrivez votre photo..."></textarea>
+        </div>
+
+        <div class="field">
+            <label>Nom utilisateur</label>
+            <input asp-for="NomUtilisateur" placeholder="Votre nom" />
+        </div>
+
+        <div class="field">
+            <label>Photo</label>
+            <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
+                <div class="icon">📷</div>
+                <label>Cliquer pour choisir une image</label>
+                <input type="file" id="fileInput" name="PhotoUpload"
+                       accept="image/*" onchange="previewImage(this)" />
+                <img id="preview" />
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-accent btn">Publier la photo</button>
+            <a asp-action="Index"
+               style="padding:8px 20px; color:#888; text-decoration:none;
+                      font-size:0.85rem; align-self:center;">
+                Annuler
+            </a>
+        </div>
+    </form>
+</div>
+
+<script>
+function previewImage(input) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = e => {
+            const preview = document.getElementById('preview');
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+</script>

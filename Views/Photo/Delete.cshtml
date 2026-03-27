@@ -1,0 +1,83 @@
+@model PhotoSharingApplication.Models.Photo
+@{ ViewData["Title"] = "Supprimer"; }
+
+<style>
+    .delete-wrap {
+        max-width: 500px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+    .delete-wrap img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        filter: grayscale(30%);
+    }
+    .delete-body { padding: 2rem; }
+    .delete-body h2 { font-size: 1.4rem; font-weight: bold; margin-bottom: 0.5rem; }
+    .warning-msg {
+        background: #fff5f5;
+        border-left: 3px solid #E8593C;
+        padding: 10px 14px;
+        font-size: 0.88rem;
+        color: #c0392b;
+        margin: 1.2rem 0;
+        border-radius: 0 3px 3px 0;
+    }
+    .delete-actions { display: flex; gap: 12px; margin-top: 1.5rem; }
+    .btn-delete {
+        background: #E8593C;
+        color: white;
+        border: none;
+        padding: 10px 24px;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+    }
+    .btn-delete:hover { background: #c4441e; }
+</style>
+
+<a asp-action="Index"
+   style="color:#E8593C; font-size:0.85rem; text-decoration:none;
+          display:inline-block; margin-bottom:1.5rem;">
+    ← Retour à la galerie
+</a>
+
+<div class="delete-wrap">
+    @if (Model.PhotoFile != null)
+    {
+        <img src="@Url.Action("GetImage", "Photo", new { id = Model.PhotoID })"
+             alt="@Model.Titre" />
+    }
+    <div class="delete-body">
+        <h2>@Model.Titre</h2>
+        <p style="color:#888; font-size:0.85rem">
+            Par @Model.NomUtilisateur ·
+            @Model.CreerDate.ToString("dd MMM yyyy")
+        </p>
+
+        <div class="warning-msg">
+            Cette action est irréversible. La photo sera définitivement supprimée.
+        </div>
+
+        <form asp-action="Delete" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" asp-for="PhotoID" />
+            <div class="delete-actions">
+                <button type="submit" class="btn-delete">
+                    Confirmer la suppression
+                </button>
+                <a asp-action="Index"
+                   style="padding:10px 16px; color:#888;
+                          text-decoration:none; font-size:0.85rem;
+                          align-self:center;">
+                    Annuler
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

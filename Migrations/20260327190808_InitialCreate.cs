@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -16,10 +17,10 @@ namespace PhotoSharingApplication.Migrations
                 {
                     CommentaireID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NomUtilisateur = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NomUtilisateur = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhotoID = table.Column<int>(type: "int", nullable: false),
                     Sujet = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
-                    CorpsMessage = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CorpsMessage = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -33,10 +34,11 @@ namespace PhotoSharingApplication.Migrations
                     PhotoID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Titre = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PhotoFile = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
-                    ImageMimeType = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    NomUtilisateur = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    PhotoFile = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    ImageMimeType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    NomUtilisateur = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreerDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {

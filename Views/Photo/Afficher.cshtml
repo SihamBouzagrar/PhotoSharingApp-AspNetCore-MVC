@@ -1,0 +1,26 @@
+@model PhotoSharingApplication.Models.Photo
+
+@{
+    ViewData["Title"] = "Détail de la Photo";
+}
+
+<h2>@Model.Titre</h2>
+
+@if (Model.PhotoFile != null)
+{
+    <img width="400"
+         src="@Url.Action("GetImage", "Photo", new { id = Model.PhotoID })" />
+}
+
+<dl class="mt-3">
+    <dt>Description</dt>
+    <dd>@Model.Description</dd>
+
+    <dt>Utilisateur</dt>
+    <dd>@Model.NomUtilisateur</dd>
+
+    <dt>Date</dt>
+    <dd>@Model.CreerDate.ToShortDateString()</dd>
+</dl>
+
+<a asp-action="Index">Retour à la liste</a>

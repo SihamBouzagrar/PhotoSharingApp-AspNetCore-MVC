@@ -7,14 +7,15 @@ namespace PhotoSharingApplication.Data
     {
         public static void Initialize(PhotoSharingContext context)
         {
+            // 1. Créer BD si elle n'existe pas
             context.Database.EnsureCreated();
-
+            // 2. Vérifier si données existent
             if (context.photos.Any())
             {
                 return;
             }
 
-            // Q7 — Liste de photos
+           // 3. Insérer données initiales
             var photoListe = new List<Photo>
             {
                 new Photo
@@ -23,15 +24,15 @@ namespace PhotoSharingApplication.Data
                     Description = "Description de la photo",
                     NomUtilisateur = "Ali",
                     ImageMimeType = "image/jpeg",
-                    PhotoFile = GetFileBytes("wwwroot\\Images\\flower.jpg")
+                    PhotoFile = GetFileBytes("Images\\Flower.jpeg"),
+                    CreerDate = DateTime.Now
                 }
             };
 
-            // Q8 — Ajouter les photos au contexte
+         
             photoListe.ForEach(p => context.photos.Add(p));
             context.SaveChanges();
 
-            // Q9 — Liste de commentaires
             var commentaireListe = new List<Commentaire>
             {
                 new Commentaire
@@ -43,16 +44,20 @@ namespace PhotoSharingApplication.Data
                 }
             };
 
-            // Q10 — Ajouter les commentaires au contexte
+           
             commentaireListe.ForEach(c => context.commentaires.Add(c));
             context.SaveChanges();
         }
-
-        // Q12 — Méthode pour lire les images
-        private static byte[] GetFileBytes(string path)
-        {
-            string fullPath = Path.Combine(Directory.GetCurrentDirectory(), path);
-            return File.ReadAllBytes(fullPath);
-        }
+private static byte[] GetFileBytes(string path)
+{
+    // Chemin correct pour .NET Core
+    string fullPath = Path.Combine(
+        Directory.GetCurrentDirectory(), 
+        
+        "Images", 
+        "Flower.jpeg"
+    );
+    return File.ReadAllBytes(fullPath);
+}
     }
 }

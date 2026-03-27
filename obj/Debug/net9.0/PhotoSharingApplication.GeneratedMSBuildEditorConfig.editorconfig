@@ -19,45 +19,61 @@ build_property.TargetFrameworkIdentifier = .NETCoreApp
 build_property.TargetFrameworkVersion = v9.0
 build_property.RootNamespace = PhotoSharingApplication
 build_property.RootNamespace = PhotoSharingApplication
-build_property.ProjectDir = C:\Users\User\OneDrive\Documents\PhotoSharingApplication\PhotoSharingApplication\
+build_property.ProjectDir = C:\Users\User\OneDrive\Desktop\PhotoSharingApplication\PhotoSharingApplication\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\User\OneDrive\Documents\PhotoSharingApplication\PhotoSharingApplication
+build_property.MSBuildProjectDirectory = C:\Users\User\OneDrive\Desktop\PhotoSharingApplication\PhotoSharingApplication
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/User/OneDrive/Documents/PhotoSharingApplication/PhotoSharingApplication/Views/Home/Index.cshtml]
+[C:/Users/User/OneDrive/Desktop/PhotoSharingApplication/PhotoSharingApplication/Views/Home/Galerie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYWxlcmllLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/OneDrive/Desktop/PhotoSharingApplication/PhotoSharingApplication/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Documents/PhotoSharingApplication/PhotoSharingApplication/Views/Home/Privacy.cshtml]
+[C:/Users/User/OneDrive/Desktop/PhotoSharingApplication/PhotoSharingApplication/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Documents/PhotoSharingApplication/PhotoSharingApplication/Views/Home/TestPage.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXN0UGFnZS5jc2h0bWw=
+[C:/Users/User/OneDrive/Desktop/PhotoSharingApplication/PhotoSharingApplication/Views/Photo/Afficher.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhvdG9cQWZmaWNoZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Documents/PhotoSharingApplication/PhotoSharingApplication/Views/Shared/Error.cshtml]
+[C:/Users/User/OneDrive/Desktop/PhotoSharingApplication/PhotoSharingApplication/Views/Photo/Creer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhvdG9cQ3JlZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/OneDrive/Desktop/PhotoSharingApplication/PhotoSharingApplication/Views/Photo/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhvdG9cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/OneDrive/Desktop/PhotoSharingApplication/PhotoSharingApplication/Views/Photo/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhvdG9caW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/OneDrive/Desktop/PhotoSharingApplication/PhotoSharingApplication/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Documents/PhotoSharingApplication/PhotoSharingApplication/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/User/OneDrive/Desktop/PhotoSharingApplication/PhotoSharingApplication/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Documents/PhotoSharingApplication/PhotoSharingApplication/Views/_ViewImports.cshtml]
+[C:/Users/User/OneDrive/Desktop/PhotoSharingApplication/PhotoSharingApplication/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Documents/PhotoSharingApplication/PhotoSharingApplication/Views/_ViewStart.cshtml]
+[C:/Users/User/OneDrive/Desktop/PhotoSharingApplication/PhotoSharingApplication/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Documents/PhotoSharingApplication/PhotoSharingApplication/Views/Shared/_Layout.cshtml]
+[C:/Users/User/OneDrive/Desktop/PhotoSharingApplication/PhotoSharingApplication/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-m9on3ptr8i
